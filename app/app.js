@@ -5,10 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
-var connectDatabase = require('./db/mongoose').connectDatabase;
+var connectDatabase = require('./models/mongoose').connectDatabase;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var recordsRouter = require('./routes/records');
 
 connectDatabase();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/records', recordsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
