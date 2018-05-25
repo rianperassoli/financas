@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+var connectDatabase = require('./db/mongoose').connectDatabase;
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+connectDatabase();
 
 var app = express();
 
