@@ -27,9 +27,9 @@
 			  		
 			  		<tr>
 			  			<td><%= record.description %></td>
-			  			<td><%= record.date %></td>
-			  			<td><%= record.value %></td>
-			  			<td><%= record.type %></td>
+			  			<td><%= record.date.toISOString().split('T')[0] %></td>
+			  			<td>R$ <%= record.value.toFixed(2) %></td>
+			  			<td><%= record.type === 'C' ? 'Credit' : 'Debit' %></td>
 			  			<td width="60">
 			  				<a href="/records/<%= record._id %>/edit"> <i class="fas fa-pen"></i> </a>
 			  				<a href="/records/<%= record._id %>/delete"> <i class="fas fa-trash"></i> </a>

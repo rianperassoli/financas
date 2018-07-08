@@ -30,7 +30,9 @@
 				       class="form-control" 
 				       name="value" 
 				       placeholder="value (R$)"  
-				       value="<%= record ? record.value : '' %>">
+				       value="<%= record ? record.value : '' %>"
+				       min="0.01"
+				       step="any">
 			</div>
 
 			<div class="form-group">
