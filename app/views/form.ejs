@@ -1,0 +1,47 @@
+<header>
+	
+</header>
+
+<section>
+	<form action="/records" method="post">
+		<% if (record) { %>
+			<input type="hidden" name="id" value="<%= record.id %>">
+		<% } %>
+
+		<div class="form-group">
+			<label for="description">Description</label>
+			<input type="text" 
+			       class="form-control" 
+			       name="description" 
+			       placeholder="Description" 
+			       value="<%= record ? record.description : '' %>">
+		</div>
+
+		<div class="form-group">
+			<label for="value">Value</label>
+			<input type="number" 
+			       class="form-control" 
+			       name="value" 
+			       placeholder="value (R$)"  
+			       value="<%= record ? record.value : '' %>">
+		</div>
+
+		<div class="form-group">
+			<label for="type">Type</label>
+			<select class="custom-select mr-sm-2" name="type" placeholder="Choose...">
+		        <option value="C" <%= record && record.type === 'C' ? 'selected' : '' %> >Credit</option>
+		        <option value="D" <%= record && record.type === 'D' ? 'selected' : '' %> >Debt</option>
+		    </select>
+		</div>
+
+		<div class="form-group">
+			<label for="date">Date</label>
+			<input type="date" 
+			       class="form-control" 
+			       name="date" 
+			       value="<%= record ? record.date.toISOString().split('T')[0] : '' %>">
+		</div>
+
+		<input type="submit" value="Save" />
+	</form>
+</section>
