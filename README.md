@@ -1,4 +1,4 @@
-Para compilar o projeto é necessário executar um "npm intall" na pasta raiz do projeto.
+Para compilar o projeto é necessário executar um "npm install" na pasta raiz do projeto.
 
 Para iniciar o service, executar "npm start".
 
